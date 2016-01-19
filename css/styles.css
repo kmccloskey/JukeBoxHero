@@ -1,0 +1,59 @@
+body {
+	background-image: url(../images/rain.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.container {
+	background-color: grey;
+	height: 100%;
+	margin-top: 1%;
+	margin-bottom: 2%;
+}
+
+.player {
+	background-color: #F0D178;
+	height: 200px;
+	margin-top: 2%;
+}
+
+.song_list {
+	background-color: black;
+	height: 100%;
+	margin-bottom: 2%;
+}
+
+.song_each {
+	background-color: white;
+	height: 50px;
+	margin-top: 7px;
+	margin-bottom: 3px;
+}
+
+.audio_buttons {
+	height: 50px;
+	background-color: white;
+	text-align: center;
+}
+
+span.glyphicon {
+	font-size: 3em;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+span.glyphicon:hover {
+	color: green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
