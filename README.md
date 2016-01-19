@@ -1,5 +1,5 @@
- NYCDA
-  # JavaScript Jukebox
+
+#JavaScript Jukebox
    * You've had a bit of time to get familiar with object oriented JavaScript. Time to use that knowledge to make the coolest juke joint in the place!
    
    * Using any mp3 you can ﬁnd online, create a simple web page where you can play it. After this step, research which JavaScript functions can pause, play, and stop the Jukebox
@@ -32,6 +32,6 @@ button, through clicking or mousing over an image on the page, or any other devi
   * Feature to request a random song
 
 ## Group Project With:
-#### Seth Lieberman
-#### Gregory Park
-#### Kyle McCloskey
+##### Seth Lieberman
+##### Gregory Park
+##### Kyle McCloskey
