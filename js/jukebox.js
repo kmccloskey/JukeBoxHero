@@ -85,53 +85,53 @@ $(document).ready(function(){
 	// setInterval(function(){
 	// 	$("#current-time").html(currentSong.currentTime);
 	// }, 1000);
+	var song1 = new Song(title="As Colorful as Ever", 
+		album="Layers",
+		artist="Broke For Free",
+		year="2016",
+		url="audio/as_colorful_as_ever.mp3");
 
-var song1 = new Song(title="As Colorful as Ever", 
-	album="Layers",
-	artist="Broke For Free",
-	year="2016",
-	url="audio/as_colorful_as_ever.mp3");
+	var song2 = new Song(title="Reading the Greens", 
+		album="Stance Gives You Balance",
+		artist="Hogan Grip",
+		year="2016",
+		url="audio/reading_the_greens.mp3");
 
-var song2 = new Song(title="Reading the Greens", 
-	album="Stance Gives You Balance",
-	artist="Hogan Grip",
-	year="2016",
-	url="audio/reading_the_greens.mp3");
+	var song3 = new Song(title="Five Minutes at the Rainforest Cafe", 
+		album="Celadon",
+		artist="Macaw",
+		year="2016",
+		url="audio/five_minutes_at_the_rainforest_cafe.mp3");
 
-var song3 = new Song(title="Five Minutes at the Rainforest Cafe", 
-	album="Celadon",
-	artist="Macaw",
-	year="2016",
-	url="audio/five_minutes_at_the_rainforest_cafe.mp3");
+	jukebox = new Jukebox;	
+	jukebox.addSong(song1);
+	jukebox.addSong(song2);
+	jukebox.addSong(song3);
+	jukebox.drawLabels($("#song-container"));
 
+	var currentSongIndex; 
 
-var jukebox = new Jukebox;	
-jukebox.addSong(song1);
-jukebox.addSong(song2);
-jukebox.addSong(song3);
-jukebox.drawLabels($("#song-container"))
-var currentSongIndex; 
+	$("#play").on("click", function(){
+		jukebox.play();
+	});	
 
-$("#play").on("click", function(){
-	jukebox.play();
-});	
+	$("#pause").on("click", function(){
+		jukebox.pause();
+	});
 
-$("#pause").on("click", function(){
-	jukebox.pause();
+	$("#stop").on("click", function(){
+		jukebox.stop();
+	});
+
+	$("audio").each(function(){
+		jukebox.addSong($(this));	
+	});
+
+	$(document).on("click", ".song_each", function(){
+		console.log("clicked!");
+		var songText = $(this).html();
+		$(".player").html(songText);
+		jukebox.currentSongIndex = $(this).attr("data-song-id");
+	});
 });
 
-$("#stop").on("click", function(){
-	jukebox.stop();
-});
-
-$("audio").each(function(){
-	jukebox.addSong($(this));	
-});
-
-$(document).on("click", ".song_each", function(){
-	console.log("clicked!");
-	var songText = $(this).html();
-	$(".player").html(songText);
-	jukebox.currentSongIndex = $(this).attr("data-song-id");
-});
-});
