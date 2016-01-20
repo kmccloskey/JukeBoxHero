@@ -30,3 +30,4 @@ $(document).ready(function(){
 	jukebox.drawLabels($("#song-container"))
 	
 });
+

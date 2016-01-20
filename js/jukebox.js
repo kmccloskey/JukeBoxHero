@@ -1,15 +1,15 @@
 function Song(title, album, artist, year, url){
-		this.title = title;
-		this.album = album;
-		this.artist = artist;
-		this.year = year;
-		this.url = url;
-		this.audioElement = new Audio(src=url); 
-		this.printDetails = title + " by " +
-										    artist + ", (" +
-										    album + ", " + 
-										    year + ")";
-	};
+	this.title = title;
+	this.album = album;
+	this.artist = artist;
+	this.year = year;
+	this.url = url;
+	this.audioElement = new Audio(src=url); 
+	this.printDetails = title + " by " +
+	artist + ", (" +
+		album + ", " + 
+		year + ")";
+};
 
 function Jukebox(){
 	
@@ -86,39 +86,52 @@ $(document).ready(function(){
 	// 	$("#current-time").html(currentSong.currentTime);
 	// }, 1000);
 
-	var currentSongIndex; 
+var song1 = new Song(title="As Colorful as Ever", 
+	album="Layers",
+	artist="Broke For Free",
+	year="2016",
+	url="audio/as_colorful_as_ever.mp3");
 
-	$("#play").on("click", function(){
-		jukebox.play();
-	});	
+var song2 = new Song(title="Reading the Greens", 
+	album="Stance Gives You Balance",
+	artist="Hogan Grip",
+	year="2016",
+	url="audio/reading_the_greens.mp3");
 
-	$("#pause").on("click", function(){
-		jukebox.pause();
-	});
+var song3 = new Song(title="Five Minutes at the Rainforest Cafe", 
+	album="Celadon",
+	artist="Macaw",
+	year="2016",
+	url="audio/five_minutes_at_the_rainforest_cafe.mp3");
 
-	$("#stop").on("click", function(){
-		jukebox.stop();
-	});
 
-	$("audio").each(function(){
-		jukebox.addSong($(this));	
-	});
+var jukebox = new Jukebox;	
+jukebox.addSong(song1);
+jukebox.addSong(song2);
+jukebox.addSong(song3);
+jukebox.drawLabels($("#song-container"))
+var currentSongIndex; 
 
-	$(document).on("click", ".song_each", function(){
-		console.log("clicked!");
-		var songText = $(this).html();
-		$(".player").html(songText);
-		jukebox.currentSongIndex = $(this).attr("data-song-id");
-	});
+$("#play").on("click", function(){
+	jukebox.play();
+});	
+
+$("#pause").on("click", function(){
+	jukebox.pause();
 });
 
+$("#stop").on("click", function(){
+	jukebox.stop();
+});
 
-// jukebox.drawLabels($("#song-container"))
+$("audio").each(function(){
+	jukebox.addSong($(this));	
+});
 
-// var jukebox = new Jukebox;
-// var testSong = new Song(title="Roy G Biv", 
-// 										album="Music Has the Right to Children",
-// 										artist="Boards of Canada",
-// 										year="2002",
-// 										url="roygbiv.mp3");
-
+$(document).on("click", ".song_each", function(){
+	console.log("clicked!");
+	var songText = $(this).html();
+	$(".player").html(songText);
+	jukebox.currentSongIndex = $(this).attr("data-song-id");
+});
+});
