@@ -115,7 +115,7 @@ $(document).ready(function(){
 });
 
 var jukebox = new Jukebox;
-jukebox.drawLabels($("#song-container"))
+
 
 // var jukebox = new Jukebox;
 // var testSong = new Song(title="Roy G Biv", 

@@ -23,3 +23,4 @@ var song3 = new Song(title="Five Minutes at the Rainforest Cafe",
 jukebox.addSong(song1);
 jukebox.addSong(song2);
 jukebox.addSong(song3);
+jukebox.drawLabels($("#song-container"))
