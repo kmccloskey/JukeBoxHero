@@ -9,6 +9,7 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
 	<script src="js/bootstrap.js" type"text/javaScript"></script>
 	<script src="js/jukebox.js" type"text/javaScript"></script>
+	<script src="js/background.js" type"text/javaScript"></script>
 </head>
 
 
@@ -16,65 +17,28 @@
 
 <!-- **********BODY*********** -->
 <body>
-	<div class="col-sm-6 page_title col-sm-offset-3">
-		<p>Music Butler</p>
+	<div class="col-sm-12 container">
+		<div class="song_icons col-sm-8 col-sm-offset-2 ">
+			<div class="col-sm-6 large_icons">
+				<div class="glyphicon glyphicon-tint col-sm-12" id="rain"></div>
+				<div class="glyphicon glyphicon-leaf col-sm-12" id="wind"></div>
+				<div class="glyphicon glyphicon-fire col-sm-12" id="fire"></div>
+			</div>
+			<div class="col-sm-6 large_icons">
+				<div class="glyphicon glyphicon-music col-sm-12" id="music"></div>
+				<div class="glyphicon glyphicon-user col-sm-12" id="talking"></div>
+				<div class="glyphicon glyphicon-flash col-sm-12" id="thunder"></div>
+			</div>
+		</div>
+		<div class="footer col-sm-3">
+			<div class="col-sm-2 audio_buttons">
+				<span class="glyphicon glyphicon-play" id="play"></span>
+				<span class="glyphicon glyphicon-pause" id="pause"></span>
+				<span class="glyphicon glyphicon-stop" id="stop"></span>
+				<span class="glyphicon glyphicon-random" id="random"></span>
+			</div>
+		</div>
 	</div>
-	<div class="col-sm-8 container col-sm-offset-2">
-		<div class="col-sm-8 player col-sm-offset-2">
-			<span class="glyphicon glyphicon glyphicon-remove-circle eyes"></span>
-			<span class="glyphicon glyphicon glyphicon-remove-circle eyes"></span>
-		</div>
-		<div class="col-sm-8 audio_buttons col-sm-offset-2">
-			<span class="glyphicon glyphicon-play" id="play"></span>
-			<span class="glyphicon glyphicon-pause" id="pause"></span>
-			<span class="glyphicon glyphicon-stop" id="stop"></span>
-			<span class="glyphicon glyphicon-forward" id ="next"></span>
-			<span class="glyphicon glyphicon-backward" id="back"></span>
-			<span class="glyphicon glyphicon-random" id="random"></span>
-		</div>
-		<div id="song-container" class="col-sm-8 song_list col-sm-offset-2">
-			<!-- <div class="col-sm-10 song_each col-sm-offset-1">
-				Song 1
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song 2
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song 3
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song
-			</div>
-			<div class="col-sm-10 song_each col-sm-offset-1">
-				Song
-			</div> -->
-
-		</div>
-	</div>	
 </body>
 
 
