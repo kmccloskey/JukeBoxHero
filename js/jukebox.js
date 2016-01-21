@@ -25,6 +25,7 @@ function Jukebox(){
 		if (this.currentSongIndex >= this.songList.length){
 			this.currentSongIndex = 0;
 		}
+
 	};
 	
 	this.previousSong = function(){
@@ -126,6 +127,23 @@ $("#stop").on("click", function(){
 
 $("audio").each(function(){
 	jukebox.addSong($(this));	
+});
+
+$("#next").on("click", function(){
+	jukebox.stop();	
+	jukebox.nextSong();
+	var currentSongIndex = jukebox.currentSongIndex
+	$(".player").html($('[data-song-id = "'+currentSongIndex +'"]').html())
+	jukebox.play();
+});
+
+$("#back").on("click", function(){
+	jukebox.stop();	
+	jukebox.previousSong();
+	var currentSongIndex = jukebox.currentSongIndex
+	$(".player").html($('[data-song-id = "'+currentSongIndex +'"]').html())
+	jukebox.play();
+	
 });
 
 $(document).on("click", ".song_each", function(){
