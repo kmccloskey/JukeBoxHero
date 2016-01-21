@@ -138,8 +138,8 @@ $(document).ready(function(){
 	jukebox.addSong(song2);
 	jukebox.addSong(song3);
 	jukebox.drawLabels($("#song-container")); // update html with data
-
-	var currentSongIndex; 
+	var currentSongIndex = jukebox.currentSongIndex
+	$(".player").html($('[data-song-id = "'+currentSongIndex +'"]').html())
 
 	// add click elements to html elements to trigger jukebox methods
 
