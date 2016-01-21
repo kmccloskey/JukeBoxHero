@@ -79,6 +79,21 @@ function Jukebox(){
 		this.currentSong().audioElement.load();	
 	}
 
+	// function for choosing a random integer
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    };
+	this.random = function(){
+		var randomSongIndex = getRandomInt(min=0, max=this.songList.length);
+		if (randomSongIndex == this.currentSongIndex) {
+			this.random()
+
+		}
+		else{
+			this.currentSongIndex = randomSongIndex
+		}		
+	}
+
 	// populate html elements with data from songList
 	this.drawLabels = function(container){
 		var songIndex = 0; // set counter to 0
@@ -155,6 +170,14 @@ $(document).ready(function(){
 	$(".player").html($('[data-song-id = "'+currentSongIndex +'"]').html())
 	jukebox.play();
 	
+	});
+
+	$("#random").on("click", function(){
+	jukebox.stop();
+	jukebox.random();
+	var currentSongIndex = jukebox.currentSongIndex
+	$(".player").html($('[data-song-id = "'+currentSongIndex +'"]').html())
+	jukebox.play();
 	});
 
 	// add click element to song listings to update player readout
