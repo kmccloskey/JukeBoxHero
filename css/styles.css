@@ -1,84 +1,75 @@
+.color1 {
+	background-color: #88DBB0;
+}
+.color2 {
+	background-color: #6FBDC3;
+}
+
+.color3 {
+	background-color: #DA3740;
+}
+
+.color4 {
+	background-color: #EA5B3A;
+}
+
+.color5 {
+	background-color: #325674;
+}
+
+.color6 {
+	background-color: #5a7558;
+}
+
+.color7 {
+	background-color: #EA7558;
+}
+
+.color8 {
+	background-color: #DD3806;
+}
+
+.color9 {
+	background-color: #F1C400;
+}
+
 body {
-	background-image: url(../images/rain.jpeg);
 	background-size: cover;
 	background-repeat: no-repeat;
-}
-
-.container {
-	background-color: rgba(204,204,204,0.0);
-	height: 100%;
-	margin-top: 1%;
-	margin-bottom: 2%;
-}
-
-.player {
-	background-color: #B1944A;
-	height: 200px;
-	margin-top: 2%;
-	border-top-left-radius: 255px;
-	border-top-right-radius: 255px;
-	border-top: 20px black solid;
-
-}
-
-.song_list {
-	background-color: black;
-	height: 600px;
-	margin-bottom: 2%;
-	overflow: scroll;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	border-left: 20px solid black;
-	border-right: 20px solid black;
-}
-
-.song_each {
-	background-color: white;
-	height: 50px;
-	margin-top: 7px;
-	margin-bottom: 3px;
+	transition: 5s ease;
 }
 
 .audio_buttons {
-	height: 50px;
-	background-color: white;
-	text-align: center;
-	border-left: 20px solid black;
-	border-right: 20px solid black;
+	height: 30px;
+	background-color: rgba(0, 0, 0, 0);
+	position: fixed;
+	left: 0;
+	bottom: 10px;
 }
 
-span.glyphicon {
-	font-size: 3em;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-span.glyphicon:hover {
-	color: #6AB149;
-}
-
-.page_title {
+.footer .glyphicon {
+	font-size: 2em;
+	padding-left: 0px;
+	padding-right: 5px;
 	color: white;
-	font-size: 55px;
+}
+
+.song_icons {
+	margin-top: 5%;
+}
+
+.song_icons .glyphicon {
+	color: white;
+	font-size: 10em;
+	padding-bottom: .455em;
+	padding-top: .005em;
+}
+
+.large_icons {
 	text-align: center;
-	margin-top: 3%;
-	text-shadow: 2px 2px black;
 }
 
-.page_title p {
-	font-family: 'Poiret One', cursive;
+.song_icons .clicked {
+	color: #E3FDDC;
 }
-
-.eyes {
-	margin-left: 123px;
-	margin-top: 25px;
-}
-
-
-
-
-
-
-
-
 
