@@ -32,6 +32,15 @@ button, through clicking or mousing over an image on the page, or any other devi
   * Feature to request a random song
 
 ## Group Project With:
-##### Seth Lieberman
-##### Gregory Park
-##### Kyle McCloskey
+##### [Seth Lieberman](https://github.com/sethlieberman)
+##### [Gregory Park](https://github.com/gregoryjpark)
+##### [Kyle McCloskey](https://github.com/kmccloskey)
+
+#### Audio sources
+
+- [Storm](http://www.freesound.org/people/Luftrum/sounds/58859/)
+- [Tones](http://www.freesound.org/people/alaupas/sounds/239115/)
+- [Talking](http://www.pacdv.com/sounds/ambience_sounds/people-talking.mp3)
+- [Fire](http://www.pacdv.com/sounds/ambience_sounds/fire-1.mp3)
+- [Wind](http://www.pacdv.com/sounds/ambience_sounds/windy-forest-1.mp3)
+- [Rain](http://www.pacdv.com/sounds/ambience_sounds/rain-6.mp3)
