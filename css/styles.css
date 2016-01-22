@@ -69,19 +69,32 @@ body {
 	text-align: center;
 }
 
-.song_icons .clicked {
-	color: #E3FDDC;
+.song_icons {
+	/*color: #E3FDDC;*/
+	/*color: rgba(255, 255, 255, 0.2);*/
+}
+
+.song_icons .play {
+	/*color: rgba(255, 255, 255, 0.2);*/
+}
+
+.song_icons .paused {
+	color: rgba(255, 255, 255, 0.2);
+	/*color: rgba(255, 255, 255, 0.5);*/
+	/*color: rgba(255, 255, 255, 1);*/
 }
 
 .large_icons .glyphicon-plus-sign {
 	font-size: 2em;
 	margin: 0 auto;
+	color: rgba(255, 255, 255, 0.3);
 }
 
 .large_icons .glyphicon-minus-sign {
 	font-size: 2em;
 	margin: 0 auto;
 	margin-bottom: 1.25em;
+	color: rgba(255, 255, 255, 0.3);
 }
 
 .too_small {

@@ -32,10 +32,25 @@ function Jukebox(){
 		});
 	}
 
+	this.isPaused = function(soundName){
+		var paused = false;
+		$(this.soundList).each(function(){
+			if (this.name == soundName){
+				paused = this.audioElement.paused;
+				return false
+				}	
+		});
+		return paused;
+	}
+
 	this.volumeUp = function(soundName, volume){
 		$(this.soundList).each(function(){
 			if (this.name == soundName){
-				this.audioElement.volume += 0.1;
+				if (this.audioElement.volume < 0.9){
+					this.audioElement.volume += 0.1;
+				} else {
+					this.audioElement.volume = 1.0;
+				}
 			}	
 		});
 	}
@@ -43,7 +58,11 @@ function Jukebox(){
 	this.volumeDown = function(soundName, volume){
 		$(this.soundList).each(function(){
 			if (this.name == soundName){
-				this.audioElement.volume -= 0.1;
+				if (this.audioElement.volume > 0.1){
+					this.audioElement.volume -= 0.1;
+				} else {
+					this.audioElement.volume = 0;
+				}
 			}	
 		});
 	}
@@ -54,6 +73,17 @@ function Jukebox(){
 				this.audioElement.volume = volume;
 			}	
 		});
+	}
+
+	this.getVolume = function(soundName){
+		var currentVolume = false;
+		$(this.soundList).each(function(){
+			if (this.name == soundName){
+				currentVolume = this.audioElement.volume;
+				return false;
+			}	
+		});
+		return currentVolume;
 	}
 
 	this.toggleLoop = function(soundName, loop){
@@ -93,7 +123,7 @@ function Jukebox(){
 			}
 		});
 	}
-	
+		
 };
 
 $(document).ready(function(){
@@ -129,36 +159,56 @@ $(document).ready(function(){
 	jukebox.toggleLoop('tones', true);
 
 	// add click elements to html elements to trigger jukebox methods
+	var checkAll = function(){
+		$(".play").each(function(){ // cycle through all play elements
+			// get current volume (0-1 range), rescale to (.2 - 1) range
+			var scaledVolume = 0.2 + (jukebox.getVolume($(this).attr("data-audio")) * 0.8)
+			if(jukebox.isPaused($(this).attr("data-audio"))){
+				$(this).addClass("paused");
+			} else {
+				$(this).removeClass("paused");
+				// if not paused, set opacity to equal scaledVolume
+				$(this).css("opacity", scaledVolume); 
+			}
+		});
+	};
 
 	$(".play").on("click", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.play(sound);
+		checkAll();
 	});	
 
 	$(".volume-up").on("click", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.volumeUp(sound);
+		checkAll();
 	});	
 
 	$(".volume-down").on("click", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.volumeDown(sound);
+		checkAll();
 	});
 
 	$("#stop").on("click", function(){
 		jukebox.stopAll();
+		checkAll();
 	});
 
 	$("#play").on("click", function(){
 		jukebox.playAll();
+		checkAll();
 	});
 
 	$("#pause").on("click", function(){
 		jukebox.pauseAll();
+		checkAll();
 	});
 
 	$("#random").on("click", function(){
 		jukebox.randomize();
+		checkAll();
 	})
 });
 

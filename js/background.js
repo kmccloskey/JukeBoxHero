@@ -8,7 +8,7 @@ $(document).ready( function() {
 	    setTimeout(function(){changeColor(curNumber)}, 7000);  
 	}
 	changeColor(0);
-	$('.glyphicon').click( function() {
-		$(this).toggleClass('clicked');
-	});
+	// $('.play').click( function() {
+	// 	$(this).toggleClass('clicked');
+	// });
 });
