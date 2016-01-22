@@ -84,7 +84,47 @@ body {
 	margin-bottom: 1.25em;
 }
 
-@media screen and (max-width: 500px) {
+.too_small {
+	display: none;
+}
+
+@media screen and (min-width: 1px) and (max-width: 252px) {
+	.too_small {
+		display: block;
+		font-size: 35px;
+		padding: 5px;
+		text-align: center;
+		margin-top: 100%;
+	}
+
+	.container {
+		display: none;
+	}
+
+	.footer {
+		display: none;
+	}
+
+	body {
+		background-color: yellow;
+	}
+}
+
+@media screen and (min-width: 253px) and (max-width: 355px) {
+    .audio_buttons {
+        background-color: black;
+        text-align: center;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .container {
+    	width: 83%;
+    }
+}
+
+
+@media screen and (min-width: 356px) and (max-width: 500px) {
     .audio_buttons {
         background-color: black;
         text-align: center;
@@ -93,16 +133,47 @@ body {
     }
 }
 
-@media screen and (max-width: 770px) and (min-width: 501px) {
-	.audio_buttons {
-
-	}
-
+@media screen and (min-width: 500px) and (max-width: 534px) {
 	.container {
 		width: 55%;
 	}
-
 }
+
+@media screen and (min-width: 535px) and (max-width: 653px) {
+	.container {
+		width: 45%;
+	}
+}
+
+@media screen and (min-width: 654px) and (max-width: 734px) {
+	.container {
+		width: 40%;
+	}
+}
+
+@media screen and (min-width: 735px) and (max-width: 767px) {
+	.container {
+		width: 60%;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1042px) {
+	.container {
+		width: 100%;
+	}
+
+	.audio_buttons {
+		bottom: 7%;
+		width: 13.1%;
+	}
+}
+
+
+
+
+
+
+
 
 
 
