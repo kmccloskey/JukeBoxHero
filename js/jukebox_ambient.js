@@ -63,11 +63,37 @@ function Jukebox(){
 			}	
 		});
 	}
+
+	this.playAll = function(){
+		$(this.soundList).each(function(){
+			this.audioElement.play();
+		})
+	}
+
+	this.pauseAll = function(){
+		$(this.soundList).each(function(){
+			this.audioElement.pause();
+		})
+	}
+
+	this.stopAll = function(){
+		$(this.soundList).each(function(){
+			this.audioElement.load();
+		})
+	}
+
+	this.randomize = function(){
+		$(this.soundList).each(function(){
+			// randomize volumes of all sounds
+			this.audioElement.volume = Math.random();
+			// play a random subset of sounds 
+			var randomBoolean = Math.random() < 0.5;
+			if(randomBoolean){
+				this.audioElement.play();
+			}
+		});
+	}
 	
-	// function for choosing a random integer (max is exclusive)
-	function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min)) + min;
-  	};
 };
 
 $(document).ready(function(){
@@ -118,6 +144,22 @@ $(document).ready(function(){
 		var sound = $(this).attr("data-audio");
 		jukebox.volumeDown(sound);
 	});
+
+	$("#stop").on("click", function(){
+		jukebox.stopAll();
+	});
+
+	$("#play").on("click", function(){
+		jukebox.playAll();
+	});
+
+	$("#pause").on("click", function(){
+		jukebox.pauseAll();
+	});
+
+	$("#random").on("click", function(){
+		jukebox.randomize();
+	})
 });
 
 
