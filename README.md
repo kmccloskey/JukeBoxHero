@@ -32,9 +32,9 @@ button, through clicking or mousing over an image on the page, or any other devi
   * Feature to request a random song
 
 ## Group Project With:
-##### Seth Lieberman
-##### Gregory Park
-##### Kyle McCloskey
+##### [Seth Lieberman](https://github.com/sethlieberman)
+##### [Gregory Park](https://github.com/gregoryjpark)
+##### [Kyle McCloskey](https://github.com/kmccloskey)
 
 #### Audio sources
 
