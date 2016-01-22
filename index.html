@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/styles.css" type="text/css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
 	<script src="js/bootstrap.js" type"text/javaScript"></script>
-	<script src="js/jukebox.js" type"text/javaScript"></script>
+	<script src="js/jukebox_ambient.js" type"text/javaScript"></script>
 	<script src="js/background.js" type"text/javaScript"></script>
 </head>
 
@@ -19,26 +19,26 @@
 	<div class="col-sm-12 container">
 		<div class="song_icons col-sm-8 col-sm-offset-2 ">
 			<div class="col-sm-6 large_icons">
-				<div class="glyphicon glyphicon-tint col-sm-12 mq" id="rain"></div>
-				<div class="glyphicon-minus-sign col-sm-6 glyphicon"></div>
-				<div class="glyphicon-plus-sign col-sm-6 glyphicon"></div>
-				<div class="glyphicon glyphicon-leaf col-sm-12" id="wind"></div>
-				<div class="glyphicon-minus-sign col-sm-6 glyphicon"></div>
-				<div class="glyphicon-plus-sign col-sm-6 glyphicon"></div>
-				<div class="glyphicon glyphicon-fire col-sm-12" id="fire"></div>
-				<div class="glyphicon-minus-sign col-sm-6 glyphicon"></div>
-				<div class="glyphicon-plus-sign col-sm-6 glyphicon"></div>
+				<div class="glyphicon glyphicon-tint col-sm-12 mq play" data-audio="rain"></div>
+				<div class="glyphicon-minus-sign col-sm-6 glyphicon volume-down" data-audio="rain"></div>
+				<div class="glyphicon-plus-sign col-sm-6 glyphicon volume-up" data-audio="rain"></div>
+				<div class="glyphicon glyphicon-leaf col-sm-12 play" data-audio="wind"></div>
+				<div class="glyphicon-minus-sign col-sm-6 glyphicon volumne-down" data-audio="wind"></div>
+				<div class="glyphicon-plus-sign col-sm-6 glyphicon volume-up" data-audio="wind"></div>
+				<div class="glyphicon glyphicon-fire col-sm-12 play" data-audio="fire"></div>
+				<div class="glyphicon-minus-sign col-sm-6 glyphicon volume-down" data-audio="fire"></div>
+				<div class="glyphicon-plus-sign col-sm-6 glyphicon volume-up" data-audio="fire"></div>
 			</div>
 			<div class="col-sm-6 large_icons">
-				<div class="glyphicon glyphicon-music col-sm-12" id="music"></div>
-				<div class="glyphicon-minus-sign col-sm-6 glyphicon"></div>
-				<div class="glyphicon-plus-sign col-sm-6 glyphicon"></div>
-				<div class="glyphicon glyphicon-user col-sm-12" id="talking"></div>
-				<div class="glyphicon-minus-sign col-sm-6 glyphicon"></div>
-				<div class="glyphicon-plus-sign col-sm-6 glyphicon"></div>
-				<div class="glyphicon glyphicon-flash col-sm-12" id="thunder"></div>
-				<div class="glyphicon-minus-sign col-sm-6 glyphicon"></div>
-				<div class="glyphicon-plus-sign col-sm-6 glyphicon"></div>
+				<div class="glyphicon glyphicon-music col-sm-12 play" data-audio="tones"></div>
+				<div class="glyphicon-minus-sign col-sm-6 glyphicon volume-down" data-audio="tones"></div>
+				<div class="glyphicon-plus-sign col-sm-6 glyphicon volume-up" data-audio="tones"></div>
+				<div class="glyphicon glyphicon-user col-sm-12 play" data-audio="talking"></div>
+				<div class="glyphicon-minus-sign col-sm-6 glyphicon volume-down" data-audio="talking"></div>
+				<div class="glyphicon-plus-sign col-sm-6 glyphicon volume-up" data-audio="talking"></div>
+				<div class="glyphicon glyphicon-flash col-sm-12 play" data-audio="storm"></div>
+				<div class="glyphicon-minus-sign col-sm-6 glyphicon volume-down" data-audio="storm"></div>
+				<div class="glyphicon-plus-sign col-sm-6 glyphicon volume-up" data-audio="storm"></div>
 			</div>
 		</div>
 		<div class="footer col-sm-3">
