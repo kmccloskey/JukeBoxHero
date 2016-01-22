@@ -1,4 +1,4 @@
-function Sound(name, url){
+function Sound(name, url){ // sound objects have name, url, audio
 	this.name = name;
 	this.url = url;
 	this.audioElement = new Audio(src=url);
@@ -6,15 +6,15 @@ function Sound(name, url){
 
 function Jukebox(){
 
-	this.soundList = []; 
+	this.soundList = []; // collection of sound objects
 	
-	this.addSound = function(sound){
+	this.addSound = function(sound){ // add song to collection
 		this.soundList.push(sound);
 	}
 
-	this.play = function(soundName){
+	this.play = function(soundName){ 
 		$(this.soundList).each(function(){
-			if (this.name == soundName){
+			if (this.name == soundName){ // play if not playing, else pause
 				if (this.audioElement.paused == true){
 					this.audioElement.play();
 				} else {
@@ -24,7 +24,7 @@ function Jukebox(){
 		});
 	}
 
-	this.stop = function(soundName, volume){
+	this.stop = function(soundName, volume){ // stop (and reset) audio
 		$(this.soundList).each(function(){
 			if (this.name == soundName){
 				this.audioElement.load();
@@ -32,7 +32,7 @@ function Jukebox(){
 		});
 	}
 
-	this.isPaused = function(soundName){
+	this.isPaused = function(soundName){ // return pause state
 		var paused = false;
 		$(this.soundList).each(function(){
 			if (this.name == soundName){
@@ -43,10 +43,10 @@ function Jukebox(){
 		return paused;
 	}
 
-	this.volumeUp = function(soundName, volume){
+	this.volumeUp = function(soundName, volume){ // increment volume
 		$(this.soundList).each(function(){
 			if (this.name == soundName){
-				if (this.audioElement.volume < 0.9){
+				if (this.audioElement.volume < 0.9){ // limit ceiling to avoid exceptions
 					this.audioElement.volume += 0.1;
 				} else {
 					this.audioElement.volume = 1.0;
@@ -55,10 +55,10 @@ function Jukebox(){
 		});
 	}
 
-	this.volumeDown = function(soundName, volume){
+	this.volumeDown = function(soundName, volume){ // decrement volume
 		$(this.soundList).each(function(){
 			if (this.name == soundName){
-				if (this.audioElement.volume > 0.1){
+				if (this.audioElement.volume > 0.1){ // limit floor to avoid exceptions
 					this.audioElement.volume -= 0.1;
 				} else {
 					this.audioElement.volume = 0;
@@ -67,7 +67,7 @@ function Jukebox(){
 		});
 	}
 	
-	this.setVolume = function(soundName, volume){
+	this.setVolume = function(soundName, volume){ // set volume explicitly
 		$(this.soundList).each(function(){
 			if (this.name == soundName){
 				this.audioElement.volume = volume;
@@ -75,7 +75,7 @@ function Jukebox(){
 		});
 	}
 
-	this.getVolume = function(soundName){
+	this.getVolume = function(soundName){ // return current volume
 		var currentVolume = false;
 		$(this.soundList).each(function(){
 			if (this.name == soundName){
@@ -86,7 +86,7 @@ function Jukebox(){
 		return currentVolume;
 	}
 
-	this.toggleLoop = function(soundName, loop){
+	this.toggleLoop = function(soundName, loop){ // set looping/repeating, loop argument is boolean
 		$(this.soundList).each(function(){
 			if (this.name == soundName){
 				this.audioElement.loop = loop;
@@ -94,19 +94,19 @@ function Jukebox(){
 		});
 	}
 
-	this.playAll = function(){
+	this.playAll = function(){ // cycle through all sounds and play
 		$(this.soundList).each(function(){
 			this.audioElement.play();
 		})
 	}
 
-	this.pauseAll = function(){
+	this.pauseAll = function(){ // cycle through all sounds and pause
 		$(this.soundList).each(function(){
 			this.audioElement.pause();
 		})
 	}
 
-	this.stopAll = function(){
+	this.stopAll = function(){ // cycle through all sounds and stop/reload
 		$(this.soundList).each(function(){
 			this.audioElement.load();
 		})
@@ -158,7 +158,7 @@ $(document).ready(function(){
 	jukebox.toggleLoop('talking', true);
 	jukebox.toggleLoop('tones', true);
 
-	// add click elements to html elements to trigger jukebox methods
+	// click elements to html elements to trigger jukebox methods
 	var checkAll = function(){
 		$(".play").each(function(){ // cycle through all play elements
 			// get current volume (0-1 range), rescale to (.2 - 1) range
@@ -176,7 +176,7 @@ $(document).ready(function(){
 	$(".play").on("click", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.play(sound);
-		checkAll();
+		checkAll(); // checkAll() cycles through elements and sets opacity levels
 	});	
 
 	$(".volume-up").on("click", function(){ 
@@ -210,6 +210,17 @@ $(document).ready(function(){
 		jukebox.randomize();
 		checkAll();
 	})
+
+	// background color transitions constantly
+	function changeColor(curNumber){
+	    curNumber++;
+	    if(curNumber > 9){
+	        curNumber = 1;
+	    }
+	    document.body.setAttribute('class', 'color' + curNumber);
+	    setTimeout(function(){changeColor(curNumber)}, 7000);  
+	}
+	changeColor(0);
 });
 
 
