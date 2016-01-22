@@ -69,19 +69,21 @@ body {
 	text-align: center;
 }
 
-.song_icons .clicked {
-	color: #E3FDDC;
+.song_icons .paused {
+	color: rgba(255, 255, 255, 0.2);
 }
 
 .large_icons .glyphicon-plus-sign {
 	font-size: 2em;
 	margin: 0 auto;
+	color: rgba(255, 255, 255, 0.3);
 }
 
 .large_icons .glyphicon-minus-sign {
 	font-size: 2em;
 	margin: 0 auto;
 	margin-bottom: 1.25em;
+	color: rgba(255, 255, 255, 0.3);
 }
 
 .too_small {
@@ -122,7 +124,6 @@ body {
     	width: 83%;
     }
 }
-
 
 @media screen and (min-width: 356px) and (max-width: 500px) {
     .audio_buttons {
@@ -167,19 +168,3 @@ body {
 		width: 13.1%;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
