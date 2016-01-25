@@ -173,40 +173,42 @@ $(document).ready(function(){
 		});
 	};
 
-	$(".play").on("click", function(){ 
+	var hasTouch = 'ontouchstart' in document.documentElement;
+
+	$(".play").on(hasTouch ? "ontouchend" : "click", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.play(sound);
 		checkAll(); // checkAll() cycles through elements and sets opacity levels
 	});	
 
-	$(".volume-up").on("click", function(){ 
+	$(".volume-up").on(hasTouch ? "ontouchend" : "click", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.volumeUp(sound);
 		checkAll();
 	});	
 
-	$(".volume-down").on("click", function(){ 
+	$(".volume-down").on(hasTouch ? "ontouchend" : "click", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.volumeDown(sound);
 		checkAll();
 	});
 
-	$("#stop").on("click", function(){
+	$("#stop").on(hasTouch ? "ontouchend" : "click", function(){
 		jukebox.stopAll();
 		checkAll();
 	});
 
-	$("#play").on("click", function(){
+	$("#play").on(hasTouch ? "ontouchend" : "click", function(){
 		jukebox.playAll();
 		checkAll();
 	});
 
-	$("#pause").on("click", function(){
+	$("#pause").on(hasTouch ? "ontouchend" : "click", function(){
 		jukebox.pauseAll();
 		checkAll();
 	});
 
-	$("#random").on("click", function(){
+	$("#random").on(hasTouch ? "ontouchend" : "click", function(){
 		jukebox.randomize();
 		checkAll();
 	})
