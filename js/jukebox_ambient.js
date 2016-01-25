@@ -173,42 +173,40 @@ $(document).ready(function(){
 		});
 	};
 
-	var hasTouch = 'ontouchstart' in document.documentElement;
-
-	$(".play").on(hasTouch ? "touchend" : "click", function(){ 
+	$(".play").on("click", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.play(sound);
 		checkAll(); // checkAll() cycles through elements and sets opacity levels
 	});	
 
-	$(".volume-up").on(hasTouch ? "touchend" : "click", function(){ 
+	$(".volume-up").on("click", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.volumeUp(sound);
 		checkAll();
 	});	
 
-	$(".volume-down").on(hasTouch ? "touchend" : "click", function(){ 
+	$(".volume-down").on("click", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.volumeDown(sound);
 		checkAll();
 	});
 
-	$("#stop").on(hasTouch ? "touchend" : "click", function(){
+	$("#stop").on("click", function(){
 		jukebox.stopAll();
 		checkAll();
 	});
 
-	$("#play").on(hasTouch ? "touchend" : "click", function(){
+	$("#play").on("click", function(){
 		jukebox.playAll();
 		checkAll();
 	});
 
-	$("#pause").on(hasTouch ? "touchend" : "click", function(){
+	$("#pause").on("click", function(){
 		jukebox.pauseAll();
 		checkAll();
 	});
 
-	$("#random").on(hasTouch ? "touchend" : "click", function(){
+	$("#random").on("click", function(){
 		jukebox.randomize();
 		checkAll();
 	})
@@ -224,5 +222,3 @@ $(document).ready(function(){
 	}
 	changeColor(0);
 });
-
-
