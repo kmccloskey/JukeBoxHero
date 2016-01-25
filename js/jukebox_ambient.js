@@ -179,13 +179,13 @@ $(document).ready(function(){
 		checkAll(); // checkAll() cycles through elements and sets opacity levels
 	});	
 
-	$(".volume-up").on("click", function(){ 
+	$(".volume-up").on("click tap", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.volumeUp(sound);
 		checkAll();
 	});	
 
-	$(".volume-down").on("click", function(){ 
+	$(".volume-down").on("click tap", function(){ 
 		var sound = $(this).attr("data-audio");
 		jukebox.volumeDown(sound);
 		checkAll();
